@@ -1,0 +1,19 @@
+*&---------------------------------------------------------------------*
+*& Report ZNJ_DISPLAY_PROGRAM_NAME
+*&---------------------------------------------------------------------*
+*& Description:
+*&   This Program display the program name
+*&
+*& Technical description:
+*&	1 - Display program name using variable system
+*& 
+*&
+*&---------------------------------------------------------------------*
+*& Change log:
+*& Date             Author        Action
+*& 28 - 09 -09      d4xtian  Created
+*&
+*&---------------------------------------------------------------------*
+REPORT znj_display_program_name.
+
+Write sy-cprog .
