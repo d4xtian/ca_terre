@@ -1,0 +1,61 @@
+*&---------------------------------------------------------------------*
+*& Report ZNJ_TERRE01
+*&---------------------------------------------------------------------*
+*& Description:
+*&   This Program displays the alphabet in lowercase letters
+*&   followed by a newline.
+*&
+*& Technical description:
+*&    1 - We declare an input, i.e. a constant which contains
+*&        the list of letters of the alphabet
+*&    2 - We count the number of the alphabet
+*&    3 - we make a loop as many times as the length of the input
+*&    4 - We assign to gv-current_alphabet the first letter of input
+*&    5 - We transform the gv_current_alphabet in lower case
+*&    6 - We display the result with line break
+*&    7 - We Increment the by 1 the variable to move to the next char of the alphabet
+*&
+*&---------------------------------------------------------------------*
+*& Change log:
+*& Date             Author        Action
+*& 2022-09-22       S4HA13        CREATED
+*&
+*&---------------------------------------------------------------------*
+
+REPORT ZNJ_TERRE01.
+
+
+*---------------------------------*
+* DECLARATIONS
+
+constants gc_list_alphabet type string value 'abcdefghijklmnoPQRStuvwxyz'.
+
+data :
+      gv_current_alphabet type c,
+
+      gv_const_offset type i,
+      gv_list_alphabet_lenght type i.
+
+
+*---------------------------------*
+* MAIN LOGIC
+
+" We count the number of character in the variable gv_listalphabet
+gv_list_alphabet_lenght = strlen( gc_list_alphabet ) .
+
+" We make a loop (Do) as many times as the length of the input
+DO gv_list_alphabet_lenght TIMES.
+
+" We assign to gv-current_alphabet the first letter of input
+  gv_current_alphabet = gc_list_alphabet+gv_const_offset.
+
+" We transform the gv_current_alphabet in lower case
+    TRANSLATE gv_current_alphabet to LOWER CASE .
+
+" We display the result with line break
+    write : / gv_current_alphabet .
+
+" We Increment the by 1 the variable to move to the next char of the alphabet
+    gv_const_offset = gv_const_offset + 1 .
+
+ENDDO.
